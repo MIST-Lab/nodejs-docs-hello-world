@@ -45,7 +45,7 @@ function upload(response, request) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write("received:<br/>");
-    response.write('<iframe src=`/show`>');
+    response.write('<iframe src="/show">');
     response.end();
   });
 }
