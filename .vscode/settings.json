@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4eaf093e-a78a-43e7-b60b-a6523b9c4cd0/resourceGroups/basic-components/providers/Microsoft.Web/sites/fileIO-component",
+    "appService.deploySubpath": "."
+}

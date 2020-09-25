@@ -1,11 +1,11 @@
-const http = require('http');
+var server = require("./server");
+var router = require("./router");
+var requestHandlers = require("./requestHandlers");
 
-const server = http.createServer((request, response) => {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
-});
+var handle = {};
+handle["/"] = requestHandlers.start;
+handle["/start"] = requestHandlers.start;
+handle["/upload"] = requestHandlers.upload;
+handle["/show"] = requestHandlers.show;
 
-const port = process.env.PORT || 1337;
-server.listen(port);
-
-console.log("Server running at http://localhost:%d", port);
+server.start(router.route, handle);
