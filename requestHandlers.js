@@ -35,7 +35,7 @@ function upload(response, request) {
     try{
         let file = files.upload;	// 获取上传文件
         const reader = fs.createReadStream(file.path);	// 创建可读流
-        const upStream = fs.createWriteStream(`upload/About.docx}`);		// 创建可写流
+        const upStream = fs.createWriteStream(`upload/About.docx`);		// 创建可写流
         reader.pipe(upStream);	// 可读流通过管道写入可写流
     }catch(e){
         console.log(e)
@@ -45,7 +45,7 @@ function upload(response, request) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write("received:<br/>");
-    response.write('<iframe src="/show"></iframe>');
+    response.write('<iframe src="upload/About.docx"></iframe>');
     response.end();
   });
 }
