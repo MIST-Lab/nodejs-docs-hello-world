@@ -45,7 +45,7 @@ function upload(response, request) {
 
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write("received:<br/>");
-    response.write('<iframe src="/show">');
+    response.write('<a src="upload/About.docx"></a>');
     response.end();
   });
 }
@@ -53,7 +53,7 @@ function upload(response, request) {
 function show(response) {
   console.log("Request handler 'show' was called.");
   response.writeHead(200, {"Content-Type": "multipart/mixed"});
-  fs.createReadStream("./upload/About.docx").pipe(response);
+  fs.createReadStream("upload/About.docx").pipe(response);
 }
 
 exports.start = start;
